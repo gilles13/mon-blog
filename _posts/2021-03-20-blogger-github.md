@@ -36,4 +36,9 @@ bundle exec jekyll serve --livereload
 
   - rédiger un post dans le répertoire `_posts`
 
-  - éditer le fichier `_config.yml`
+  - éditer les fichiers `_config.yml` et `Gemfile`
+
+    + Dans `_config.yml`, il faut (au moins) saisir les informations de baseurl (ici "/mon-blog") et url ("http://user.github.io")
+
+		+ Dans `Gemfile`, décommenter la ligne `gem "github-pages", group: :jekyll_plugins`
+
