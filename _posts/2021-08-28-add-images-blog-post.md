@@ -11,6 +11,6 @@ Un post juste pour tester une fonctionnalité ...
 
 Et tester le resize (fonctionne seulement avec `kramdown` ?)
 
-<img src="/images/peter-herrmann-unsplash.jpg" height="50%" width="50%">
+<img src="{{ site.baseurl }}/images/peter-herrmann-unsplash.jpg" height="50%" width="50%">
 
 D'après [ceci](https://gist.github.com/uupaa/f77d2bcf4dc7a294d109), le resize d'image ne fonctionne qu'avec le tag `<img>`, pas avec la syntaxe markdown.
