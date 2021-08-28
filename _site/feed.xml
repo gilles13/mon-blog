@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/mon-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/mon-blog/" rel="alternate" type="text/html" /><updated>2021-05-01T11:22:27+02:00</updated><id>http://localhost:4000/mon-blog/feed.xml</id><title type="html">Mon super blog</title><subtitle>Un blog pour ne rien dire.</subtitle><entry><title type="html">Procédure simplifiée pour blogger sur Github-Pages</title><link href="http://localhost:4000/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github.html" rel="alternate" type="text/html" title="Procédure simplifiée pour blogger sur Github-Pages" /><published>2021-03-20T09:12:04+01:00</published><updated>2021-03-20T09:12:04+01:00</updated><id>http://localhost:4000/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github</id><content type="html" xml:base="http://localhost:4000/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github.html">&lt;p&gt;Procédure suivie :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;installer &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby&lt;/code&gt; avec &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pacman&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;pacman &lt;span class=&quot;nt&quot;&gt;-Sy&lt;/span&gt; ruby&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;installer les modules &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby&lt;/code&gt; nécessaires&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll bundle rake jekyll-sitemap &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; /usr/local/bin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;cloner le &lt;em&gt;repo&lt;/em&gt; et se positionner dessus&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;git clone git@github.com:gilles13/mon-blog.git
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;mon-blog&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jekyll-iser le &lt;em&gt;repo&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll serve &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;lancer &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--livereload&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;rédiger un post dans le répertoire &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;éditer le fichier &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="jekyll" /><category term="github" /><category term="ruby" /><summary type="html">Procédure suivie :</summary></entry></feed>
