@@ -9,3 +9,7 @@ Un post juste pour tester une fonctionnalité ...
 
 ![Joliphoto]({{ site.baseurl }}/images/peter-herrmann-unsplash.jpg)
 
+Et tester le resize (fonctionne seulement avec `kramdown` ?)
+
+![Joliphoto]({{ site.baseurl }}/images/peter-herrmann-unsplash.jpg){:height="50%" width="50%"}
+
