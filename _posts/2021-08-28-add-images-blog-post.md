@@ -7,5 +7,5 @@ categories: jekyll github-pages images
 
 Un post juste pour tester une fonctionnalité ...
 
-![Joli photo](/images/peter-herrmann-unsplash.jpg)
+![Joliphoto]({{ site.baseurl }}/images/peter-herrmann-unsplash.jpg)
 

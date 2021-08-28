@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Procédure simplifiée pour blogger sur Github-Pages" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Procédure simplifiée pour blogger sur Github-Pages","dateModified":"2021-03-20T09:12:04+01:00","datePublished":"2021-03-20T09:12:04+01:00","description":"Procédure suivie :","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github.html"},"url":"http://localhost:4000/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github.html","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","description":"Procédure suivie :","headline":"Procédure simplifiée pour blogger sur Github-Pages","dateModified":"2021-03-20T09:12:04+01:00","datePublished":"2021-03-20T09:12:04+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github.html"},"url":"http://localhost:4000/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/mon-blog/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/mon-blog/feed.xml" title="Mon super blog" /></head>
 <body><header class="site-header" role="banner">
@@ -85,9 +85,19 @@
     <p>rédiger un post dans le répertoire <code class="language-plaintext highlighter-rouge">_posts</code></p>
   </li>
   <li>
-    <p>éditer le fichier <code class="language-plaintext highlighter-rouge">_config.yml</code></p>
+    <p>éditer les fichiers <code class="language-plaintext highlighter-rouge">_config.yml</code> et <code class="language-plaintext highlighter-rouge">Gemfile</code></p>
+
+    <ul>
+      <li>
+        <p>Dans <code class="language-plaintext highlighter-rouge">_config.yml</code>, il faut (au moins) saisir les informations de baseurl (ici “/mon-blog”) et url (“http://user.github.io”)</p>
+      </li>
+      <li>
+        <p>Dans <code class="language-plaintext highlighter-rouge">Gemfile</code>, décommenter la ligne <code class="language-plaintext highlighter-rouge">gem "github-pages", group: :jekyll_plugins</code></p>
+      </li>
+    </ul>
   </li>
 </ul>
+
 
   </div><a class="u-url" href="/mon-blog/jekyll/github/ruby/2021/03/20/blogger-github.html" hidden></a>
 </article>
