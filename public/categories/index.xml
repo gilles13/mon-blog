@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on A Hugo website</title>
-    <link>http://gilles13.gihub.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on A Hugo website</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 28 Aug 2021 10:20:00 +0100</lastBuildDate>
-    <atom:link href="http://gilles13.gihub.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jekyll Github-Pages Images</title>
-      <link>http://gilles13.gihub.io/categories/jekyll-github-pages-images/</link>
+      <link>/categories/jekyll-github-pages-images/</link>
       <pubDate>Sat, 28 Aug 2021 10:20:00 +0100</pubDate>
-      <guid>http://gilles13.gihub.io/categories/jekyll-github-pages-images/</guid>
+      <guid>/categories/jekyll-github-pages-images/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux Archlinux Dwm Shell Scripts</title>
-      <link>http://gilles13.gihub.io/categories/linux-archlinux-dwm-shell-scripts/</link>
+      <link>/categories/linux-archlinux-dwm-shell-scripts/</link>
       <pubDate>Sat, 28 Aug 2021 10:20:00 +0100</pubDate>
-      <guid>http://gilles13.gihub.io/categories/linux-archlinux-dwm-shell-scripts/</guid>
+      <guid>/categories/linux-archlinux-dwm-shell-scripts/</guid>
       <description></description>
     </item>
     <item>
       <title>Jekyll Github Ruby</title>
-      <link>http://gilles13.gihub.io/categories/jekyll-github-ruby/</link>
+      <link>/categories/jekyll-github-ruby/</link>
       <pubDate>Sat, 20 Mar 2021 09:12:04 +0100</pubDate>
-      <guid>http://gilles13.gihub.io/categories/jekyll-github-ruby/</guid>
+      <guid>/categories/jekyll-github-ruby/</guid>
       <description></description>
     </item>
   </channel>

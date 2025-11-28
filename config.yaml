@@ -3,9 +3,6 @@ relativeURLs: true
 canonifyURLs: true
 
 # Paramètres facultatifs
-paginate: 10           # nombre d’articles par page
-enableRobotsTXT: true  # génère un fichier robots.txt
-hasCJKLanguage: false
 
 languageCode: en-US
 title: A Hugo website
@@ -25,6 +22,9 @@ menu:
     - name: Twitter
       url: https://twitter.com/rstudio
 params:
+  paginate: 10
+  enableRobotsTXT: true
+  hasCJKLanguage: false
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5
   description: A website built through Hugo and blogdown.

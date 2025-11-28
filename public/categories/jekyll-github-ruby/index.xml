@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll Github Ruby on A Hugo website</title>
-    <link>http://gilles13.gihub.io/categories/jekyll-github-ruby/</link>
+    <link>/categories/jekyll-github-ruby/</link>
     <description>Recent content in Jekyll Github Ruby on A Hugo website</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 20 Mar 2021 09:12:04 +0100</lastBuildDate>
-    <atom:link href="http://gilles13.gihub.io/categories/jekyll-github-ruby/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/jekyll-github-ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Procédure simplifiée pour blogger sur Github-Pages</title>
-      <link>http://gilles13.gihub.io/2021/03/20/proc%C3%A9dure-simplifi%C3%A9e-pour-blogger-sur-github-pages/</link>
+      <link>/2021/03/20/proc%C3%A9dure-simplifi%C3%A9e-pour-blogger-sur-github-pages/</link>
       <pubDate>Sat, 20 Mar 2021 09:12:04 +0100</pubDate>
-      <guid>http://gilles13.gihub.io/2021/03/20/proc%C3%A9dure-simplifi%C3%A9e-pour-blogger-sur-github-pages/</guid>
+      <guid>/2021/03/20/proc%C3%A9dure-simplifi%C3%A9e-pour-blogger-sur-github-pages/</guid>
       <description>&lt;p&gt;Procédure suivie :&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;installer &lt;code&gt;ruby&lt;/code&gt; avec &lt;code&gt;pacman&lt;/code&gt;&#xA;{% highlight bash %}&#xA;sudo pacman -Sy ruby&#xA;{% endhighlight %}&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;installer les modules &lt;code&gt;ruby&lt;/code&gt; nécessaires&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;{% highlight bash %}&#xA;sudo gem install jekyll bundle rake jekyll-sitemap -n /usr/local/bin&#xA;{% endhighlight %}&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;cloner le &lt;em&gt;repo&lt;/em&gt; et se positionner dessus&#xA;{% highlight bash %}&#xA;git clone &lt;a href=&#34;mailto:git@github.com&#34;&gt;git@github.com&lt;/a&gt;:gilles13/mon-blog.git&#xA;cd mon-blog&#xA;{% endhighlight %}&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;jekyll-iser le &lt;em&gt;repo&lt;/em&gt;&#xA;{% highlight bash %}&#xA;jekyll serve . &amp;ndash;force&#xA;{% endhighlight %}&lt;/p&gt;</description>
     </item>
   </channel>
