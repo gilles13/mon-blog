@@ -1,4 +1,12 @@
 baseurl: "https://gilles13.gihub.io/mon-blog/"
+relativeURLs: true
+canonifyURLs: true
+
+# Paramètres facultatifs
+paginate: 10           # nombre d’articles par page
+enableRobotsTXT: true  # génère un fichier robots.txt
+hasCJKLanguage: false
+
 languageCode: en-US
 title: A Hugo website
 theme: hugo-lithium
