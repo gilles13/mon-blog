@@ -1,46 +1,38 @@
-baseurl: "https://gilles13.gihub.io/mon-blog/"
+baseURL: "https://gilles13.github.io/mon-blog/"
+languageCode: "fr-fr"
+title: "Mon Blog"
+theme: "hugo-livestyle"  # remplace par ton thème si différent
 relativeURLs: true
 canonifyURLs: true
-
-# Paramètres facultatifs
-
-languageCode: en-US
-title: A Hugo website
-theme: hugo-lithium
 ignoreFiles:
   - \.Rmd$
   - \.Rmarkdown$
   - _cache$
 permalinks:
   post: /:year/:month/:day/:slug/
-menu:
-  main:
-    - name: About
-      url: /about/
-    - name: GitHub
-      url: https://github.com/gilles13
-    - name: Twitter
-      url: https://twitter.com/rstudio
+
+# Paramètres personnalisés pour le thème
 params:
-  paginate: 10
-  enableRobotsTXT: true
+  author: "Gilles"
+  paginate: 10               # nombre d’articles par page
+  enableRobotsTXT: true      # génère un robots.txt
   hasCJKLanguage: false
-  MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
-  MathJaxVersion: 2.7.5
-  description: A website built through Hugo and blogdown.
+  description: "Bienvenue sur mon blog Hugo généré avec blogdown"
   favicon: favicon.ico
+  highlightjsTheme: github
+  highlightjsVersion: 9.12.0
   highlightjsCDN: //cdnjs.cloudflare.com/ajax/libs
   highlightjsLang:
     - bash
     - r
     - yaml
-  highlightjsTheme: github
-  highlightjsVersion: 9.12.0
   logo:
     alt: Logo
     height: 50
     url: monlogo.jpg
     width: 50
+
+# markup
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
@@ -48,3 +40,26 @@ markup:
       unsafe: true
   highlight:
     codeFences: false
+
+# Menu de navigation
+menu:
+  main:
+    - identifier: home
+      name: Accueil
+      url: /
+      weight: 1
+    - identifier: about
+      name: À propos
+      url: /about/
+      weight: 2
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 3
+
+# Footer simple
+footer:
+  copyright:
+    text: "© 2025 Gilles"
+    url: "https://gilles13.github.io/mon-blog/"
+
