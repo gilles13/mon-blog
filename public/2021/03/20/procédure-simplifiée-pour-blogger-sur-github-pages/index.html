@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.152.2">
+
+
+<title>Procédure simplifiée pour blogger sur Github-Pages - A Hugo website</title>
+<meta property="og:title" content="Procédure simplifiée pour blogger sur Github-Pages - A Hugo website">
+
+
+  <link href='http://gilles13.gihub.io/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/monlogo.jpg"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/gilles13">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Procédure simplifiée pour blogger sur Github-Pages</h1>
+
+    
+    <span class="article-date">2021-03-20</span>
+    
+
+    <div class="article-content">
+      
+      <p>Procédure suivie :</p>
+<ul>
+<li>
+<p>installer <code>ruby</code> avec <code>pacman</code>
+{% highlight bash %}
+sudo pacman -Sy ruby
+{% endhighlight %}</p>
+</li>
+<li>
+<p>installer les modules <code>ruby</code> nécessaires</p>
+</li>
+</ul>
+<p>{% highlight bash %}
+sudo gem install jekyll bundle rake jekyll-sitemap -n /usr/local/bin
+{% endhighlight %}</p>
+<ul>
+<li>
+<p>cloner le <em>repo</em> et se positionner dessus
+{% highlight bash %}
+git clone <a href="mailto:git@github.com">git@github.com</a>:gilles13/mon-blog.git
+cd mon-blog
+{% endhighlight %}</p>
+</li>
+<li>
+<p>jekyll-iser le <em>repo</em>
+{% highlight bash %}
+jekyll serve . &ndash;force
+{% endhighlight %}</p>
+</li>
+<li>
+<p>lancer <code>bundle</code>
+{% highlight bash %}
+bundle exec jekyll serve &ndash;livereload
+{% endhighlight %}</p>
+</li>
+<li>
+<p>rédiger un post dans le répertoire <code>_posts</code></p>
+</li>
+<li>
+<p>éditer les fichiers <code>_config.yml</code> et <code>Gemfile</code></p>
+<ul>
+<li>
+<p>Dans <code>_config.yml</code>, il faut (au moins) saisir les informations de baseurl (ici &ldquo;/mon-blog&rdquo;) et url (&ldquo;<a href="http://user.github.io">http://user.github.io</a>&rdquo;)</p>
+</li>
+<li>
+<p>Dans <code>Gemfile</code>, décommenter la ligne <code>gem &quot;github-pages&quot;, group: :jekyll_plugins</code></p>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+

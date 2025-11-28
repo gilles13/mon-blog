@@ -1,0 +1,191 @@
+---
+title: "Les dépenses des administrations publiques"
+date: "2025-11-28"
+author: "Gilles"
+output:
+  html_document:
+    code_folding: false
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(treemapify)
+options(dplyr.summarise.inform = FALSE)
+```
+
+## Fonctions utiles
+```{r}
+mprof = function(x, denom = "col", sens = c("row", "col"), digits = 1, ...) {
+	x |> 
+		janitor::adorn_totals(where = sens, ...) |> 
+		janitor::adorn_percentages(denominator = denom) |> 
+		dplyr::mutate(dplyr::across(tidyselect::where(is.numeric), \(x) x *100)) |> 
+		dplyr::mutate(dplyr::across(tidyselect::where(is.numeric), \(x) round(x, digits)))
+}
+
+group_num <- function(x) {
+	ret = 0
+	for(i in 1:length(x)) {
+		ret = bitwShiftL(ret, 1)
+		if (x[i]) {
+			ret = bitwOr(ret, 1L)
+		}
+	}
+	2^length(x) - ret - 1
+}
+```
+
+## Liens
+
+[Insee, dépenses des administrations publiques ventilées par fonction en 2024](https://www.insee.fr/fr/statistiques/8574707?sommaire=8574832)
+
+## Dwl / link
+
+```{r}
+
+tmpfile = tempfile(fileext = ".xlsx")
+
+urldata3301 = "https://www.insee.fr/fr/statistiques/fichier/8068626/t_3301.xlsx"
+urldata3303 = "https://www.insee.fr/fr/statistiques/fichier/8068626/t_3303.xlsx"
+
+download.file(url = urldata3301,
+							mode = "wb",
+	 						destfile = tmpfile)
+
+t3301 = readxl::read_xlsx(tmpfile,
+													sheet = "T_3301",
+													skip = 3)
+
+names(t3301) = c("sto", "oc", "expe", "explab", paste0("m", 1995:2023))
+
+tmpfile = tempfile(fileext = ".xlsx")
+
+download.file(url = urldata3303,
+							mode = "wb",
+	 						destfile = tmpfile)
+
+
+
+t33 = readxl::read_xlsx("~/data/insee/t_3303.xlsx", skip = 3, sheet = "T_3303")
+names(t33) = c("sto", "oc", "expe", "explab", paste0("m", 2009:2023))
+
+t33 = 
+	t33 |> 
+	filter(sto != "STO")
+
+dico = list(
+n1 = data.frame(
+	t33 |> 
+	filter(nchar(expe) == 4) |> 
+	distinct(expe, explab) |> 
+	rename(code = expe, lab = explab)
+),
+n2 = 
+	t33 |> 
+	filter(nchar(expe) == 6) |> 
+	distinct(expe, explab) |> 
+	rename(code = expe, lab = explab)
+)
+
+dico$n1 =
+	dico$n1 |> 
+	mutate(labshort = c("Svces gx des admin pub",
+											"Defense",
+											"Ordre SP",
+											"Affaires eco",
+											"Prot. envir.",
+											"Lgts & equip. coll",
+											"Sante",
+											"Culture",
+											"Enseignement",
+											"Prot. sociale"))
+
+
+t3301 = 
+	t3301 |> 
+	dplyr::filter(sto != "STO")
+
+dt = 
+	t3301 |> 
+	dplyr::filter(nchar(expe) == 6) |> 
+	tidyr::pivot_longer(cols = -c(1:4)) |> 
+	tidyr::separate(col = expe,
+									sep = 4,
+									into = c("n1", "n2"),
+									remove = FALSE) |>
+	data.table::as.data.table()
+
+dims = c("sto", "expe", "n1", "n2", "name")
+cube =
+	data.table::cube(dt,
+									 j = lapply(.SD, sum, na.rm = TRUE),
+									 by = dims,
+									 id = TRUE,
+									 .SDcols = "value")
+
+f2 = group_num(c(sto=T, expe=T, n1=T, n2=T, name=T))
+
+d2 =
+	cube |> 
+	dplyr::filter(grouping == f2,
+				 name == "m2023",
+				 sto == "OTE") |> 
+	dplyr::left_join(y = dico$n2, by = c("expe" = "code")) |> 
+	dplyr::rename(labn2 = lab)
+
+d2 = 
+	d2 |> 
+	left_join(y = dico$n1, by = c("n1" = "code")) |> 
+	rename(labn1 = lab, labsn1 = labshort)
+
+d2[, part := value/sum(value) * 100]
+
+gn = group_num(c(sto=T, expe=F, n1=F, n2=F, name=T))
+dep2023ote = 
+	cube |> 
+	filter(grouping == gn,
+				 name == "m2023",
+				 sto == "OTE") |> 
+	select(value) |> 
+	pull()
+
+
+p = 
+	ggplot(d2, aes(
+  area = value,
+  fill = labsn1,
+  label = labn2,
+  subgroup = labsn1)) +
+  geom_treemap(size = 2) +
+  geom_treemap_subgroup_border(colour = "blue", size = 3) +
+	# LABELS NIV 2
+	geom_treemap_text(
+    place = "centre",
+    grow = FALSE,
+    colour = "white",
+    reflow = TRUE) +
+	# LABELS N1
+  geom_treemap_subgroup_text(
+    place = "centre",
+    grow = T,
+    alpha = 0.3,
+    colour = "black",
+    fontface = "bold",
+    min.size = 1
+  ) +
+  labs(
+    title = paste0("Dépenses (COFOG) de l'état en 2023 = ", round(dep2023ote, 0), " Mds €"),
+		subtitle = "https://www.insee.fr/fr/statistiques/8068624?sommaire=8068749",
+    caption = 
+			paste0("Source : Insee, comptes nationaux, base 2020",
+						 "\n",
+						 urldata3301)) +
+  theme(legend.position = "none", 
+				panel.border = element_rect(colour = "blue", fill = NA, linewidth = 3),
+				plot.title = element_text(size = 28),
+				plot.caption = element_text(hjust = 0, size = 14))
+p
+```
+

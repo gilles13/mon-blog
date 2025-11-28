@@ -1,0 +1,56 @@
+---
+title: "Test"
+author: "Gilles"
+date: "`r Sys.Date()`"
+draft: true    # true tant que non publié
+slug: "mon-article"
+categories: ["Data"]
+tags: ["R", "blogdown", "tutorial"]
+image: "/images/mon_image.jpg"
+output:
+  html_document:
+    toc: true
+---
+
+## Introduction
+
+Voici un exemple de post.
+
+### Chunk R
+
+```{r, echo=TRUE}
+# Un petit exemple
+x <- 1:10
+y <- x^2
+plot(x, y, type='b', col='blue', main='Exemple pliable')
+```
+
+### Résultat non formaté
+
+```{r}
+summary(y)
+```
+
+### Code sur plusieurs lignes
+```{r}
+mondata = data.frame(
+            A = 1:11,
+            B = 10:20
+            )
+```
+
+### autre test
+
+```{r}
+mondata2 = c("A",
+             "B")
+```
+
+### encore autre chose
+
+```{r, echo=FALSE}
+plot(1:5)
+```
+
+
+
