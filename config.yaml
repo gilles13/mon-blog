@@ -1,4 +1,4 @@
-baseurl: "http://gilles13.gihub.io/mon-blog/"
+baseurl: "https://gilles13.gihub.io/mon-blog/"
 languageCode: en-US
 title: A Hugo website
 theme: hugo-lithium
