@@ -1,7 +1,7 @@
 baseURL: "https://gilles13.github.io/mon-blog/"
 languageCode: "fr-fr"
 title: "Mon Blog"
-theme: "hugo-livestyle"  # remplace par ton thème si différent
+theme: "hugo-lithium"  # remplace par ton thème si différent
 relativeURLs: true
 canonifyURLs: true
 ignoreFiles:
