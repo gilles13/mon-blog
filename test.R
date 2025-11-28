@@ -7,6 +7,7 @@ blogdown::install_theme("jruthe/lithium-theme")
 blogdown::install_theme("halogenica/beautifulhugo")
 blogdown::install_theme("pacollins/hugo-future-imperfect-slim")
 blogdown::install_theme("calintat/minimal")
+blogdown::install_theme("digitalcraftsman/hugo-livestyle", theme_example = TRUE)
 
 
 
